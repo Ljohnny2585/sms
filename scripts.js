@@ -1,19 +1,11 @@
-document.getElementById("bank-analysis-form").addEventListener("submit", async (event) => {
+document.getElementById("analysis-form").addEventListener("submit", (event) => {
     event.preventDefault();
-    const formData = new FormData(event.target);
+    alert("Bank statement uploaded successfully! Analyzing your data...");
+    // Add API or backend integration for analysis here.
+});
 
-    try {
-        const response = await fetch("/analyze", {
-            method: "POST",
-            body: formData,
-        });
-        if (response.ok) {
-            const result = await response.json();
-            alert(`Analysis Complete: ${result.details}`);
-        } else {
-            alert("Error analyzing the document. Please try again.");
-        }
-    } catch (error) {
-        console.error("Error:", error);
-    }
+document.getElementById("login-form").addEventListener("submit", (event) => {
+    event.preventDefault();
+    alert("Logging you in...");
+    // Add authentication integration here.
 });
